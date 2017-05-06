@@ -1,12 +1,11 @@
 <template lang="html">
-  <!-- <div class="swiper">
-    <img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2456570038.jpg" alt="">
-  </div> -->
-  <mt-swipe :auto="2000">
-    <mt-swipe-item v-for="(item,index) in dataSource" :key="index">
-      <img :src="item.images.large" alt="">
-    </mt-swipe-item>
-  </mt-swipe>
+  <div class="m-board">
+    <mt-swipe :auto="2000">
+      <mt-swipe-item v-for="(item,index) in dataSource" :key="index">
+        <img :src="item.images.large" alt="">
+      </mt-swipe-item>
+    </mt-swipe>
+  </div>
 </template>
 
 <script>
@@ -28,7 +27,7 @@ export default {
   mounted: function () {
     let that = this
     utilAxios.get({
-      url: 'http://localhost:9000/swiper',
+      url: '/api/v2/movie/in_theaters?count=10',
       method: 'get',
       callback: function (res) {
         that.dataSource = that.dataSource.concat(res.data.subjects)

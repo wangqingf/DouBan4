@@ -1,8 +1,190 @@
+
 .m-board {
+  .header{
+      width:95%;
+      height: .4rem;
+      background: #fff;
+      margin:0 auto;
+      @include flexbox();
+      display:flex;  
+      align-items:center;
+      justify-content:center;
+      span{
+          font-size: .2rem;
+      }
+      input{
+         @include flex();
+         border: none; 
+      }
+      span{
+          font-size: .2rem;
+      }
+  } 
+  .min{
+      height: 2.03rem;
+      .m1{
+          height: 1.63rem;
+          img{
+              height: 100%;
+              width: 100%;
+          }
+      }
+      ul{
+          height: .3rem;
+          @include flexbox();
+          display:flex;  
+          align-items:center;
+          justify-content:center;
+          li{
+              font-size: .12rem;
+              padding: 0 .08rem;
+          }
+          span{
+              width: .01rem;
+              height: .13rem;
+              background: #000;
+          }
+      }
+      .empty{
+          height: .1rem;
+          background: #eee;
+      }
+  } 
+  .main{
+      h3{
+          height: .4rem;
+          display:flex;  
+          align-items:center;
+          justify-content:center;
+      }
+      ul{
+          li{
+              height: 1.5rem;
+              position: relative;
+              margin-bottom: .1rem;
+              img{
+                  width: 100%;
+                  height: 100%;
+              }
+              .ud{
+                  position: absolute;
+                  width: 100%;
+                  height: .5rem;
+                  bottom:0;
+                  background: rgba(0,0,0,.4);
+                  .p1{
+                      font-size: .15rem;
+                      color: #fff;
+                      margin-top: .05rem;
+                      margin-left: .1rem;
+                  }
+                  .p2{
+                      font-size: .12rem;
+                      color: #fff;
+                      margin-left: .1rem;
+                  }
+                  
+              }
+          }
+      }
+  }
+   
+  .mav{
+      @include flexbox();
+      height: .4rem;
+      border-top:.01rem solid #aaa;
+      border-bottom:.01rem solid #aaa;
+      display:flex;  
+      align-items:center;
+      justify-content:center;
+      position: relative;
+      .ma1{
+          padding-right: .5rem;
+      }
+      .ma1:hover{
+          color: #f00;
+      }
+
+      .av1{
+              width: 100%;
+              position: absolute;
+              display: none;
+              top:.41rem;
+              right: 0;
+              ul{
+                   @include flexbox();
+                   @include flex-wrap(wrap);
+                   width: 100%;
+                   height: 1.37rem;
+                  li{
+                      width: 22%;
+                      height: .25rem;
+                      background: #aaa;
+                      margin: 0 1.5%;
+                      text-align: center;
+                      line-height:.25rem ;
+                  }
+              }
+          }
+      .ma2{
+          
+      }
+      .ma2:hover{
+          color: #f00;
+      }
+      .ma3{
+          padding-left: .5rem;
+      } 
+      .ma3:hover{
+          color: #f00;
+      }  
+  }  
   .mint-swipe {
-    height: 1.9rem;
+    height: 1.63rem;
     img {
       width: 100%;
     }
+  }
+  .m-boardlist{
+      margin-top: .1rem;
+      ul{
+          width: 100%;
+          @include flexbox();
+          @include flex-wrap(wrap);
+          li{ 
+              width: 47%;
+              height: 2.2rem;
+              margin-left: 2%;
+              text-align: center;
+              .lic{ 
+                  position: relative;
+                  height: 1.39rem;
+                  border: .01rem solid #aaa;
+                  margin-bottom: .1rem;
+                  img{
+                      width: 100%;
+                      height: 100%;
+                  }
+                  .small{
+                      position: absolute;
+                      left: 0;
+                      bottom: 0;
+                      width: .6rem;
+                      height:.2rem;
+                      background: rgba(0,0,0,.3);
+                      color: #fff;
+                      line-height: .2rem;
+                  }                  
+              }
+            p{
+              font-size:.12rem;   
+            }
+            div{   
+                   color: #e4007f;
+                   font-size: .12rem;
+                   margin-top: .1rem;
+            }  
+          }
+      }
   }
 }

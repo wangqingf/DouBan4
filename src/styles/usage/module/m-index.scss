@@ -22,7 +22,8 @@
   section {
     @include flex(1);
     width: 100%;
-    background: gray;
+    background: #fff;
+    overflow-y: scroll;
   }
 
   nav {
@@ -49,7 +50,7 @@
           }
         }
         &.active span {
-          color: #35495e;
+          color: #f00;
         }
       }
     }

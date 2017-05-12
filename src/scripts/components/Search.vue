@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="m-search">
     search...
   </div>
 </template>

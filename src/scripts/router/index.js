@@ -4,6 +4,9 @@ import Index from '@/scripts/components/Index'
 import Board from '@/scripts/components/Board'
 import Search from '@/scripts/components/Search'
 import User from '@/scripts/components/User'
+import Registor from '@/scripts/components/Registor'
+import Login from '@/scripts/components/Login'
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,10 +16,6 @@ export default new Router({
       component: Index,
       redirect: 'board',
       children: [
-        // {
-        //   path: '',
-        //   component: Board
-        // },
         {
           path: 'board',
           component: Board
@@ -30,6 +29,14 @@ export default new Router({
           component: User
         }
       ]
+    },
+    {
+      path: '/registor',
+      component: Registor
+    },
+    {
+      path: '/login',
+      component: Login
     }
   ]
 })

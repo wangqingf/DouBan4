@@ -29,17 +29,17 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://api.douban.com/',
+        target: 'http://www.xiangqu.com',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
         }
       },
-      '/mock': {
-        target: 'http://localhost:9000/',
+      '/nodejs': {
+        target: 'http://localhost:3000/',
         changeOrigin: true,
         pathRewrite: {
-          '^/mock': ''
+          '^/nodejs': ''
         }
       }
     },

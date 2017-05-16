@@ -9,7 +9,7 @@
          <div class="write">
 		         <ul >
 		         	  <li>
-		         	  	 <input type="text" placeholder="请填入手机号"/>
+		         	  	 <input type="text" placeholder="请填入手机号" v-model="username" name="username"/>
 		         	  </li>
 		         	  <li>
 		         	  	 <input type="text" placeholder="请输入验证码"/>
@@ -17,14 +17,14 @@
 		         	  	 <b>获取验证码</b>
 		         	  </li>
 		         	  <li>
-		         	  	 <input type="text" placeholder="请输入密码"/>
+		         	  	 <input type="text" placeholder="请输入密码" v-model="password" name="password"/>
 		         	  	 <span></span>
 		         	  	 <i class="yo-ico">&#xe610;</i>
 		         	  </li>
 		         </ul>
          </div>
          <div class="bttn">
-         	  <input type="submit" value="注册" />
+         	  <input type="submit" value="注册"  @click="registor"/>
          	  <span>已有账号！立即登录</span>
          </div>
   </div>
@@ -32,23 +32,43 @@
 </template>
 
 <script>
-let vm = {
+import Vue from 'vue'
+import utilAxios from '../utils/axios'
+export default {
   data(){
     return {
+      username: '',
+      password: '',
+      storeName: ''
     }
   },
-  props: {
-    
-  },
-
+  props: [],
   methods: {
+    registor: function () {
+      let that = this
+      utilAxios.post({
+        url: '/nodejs/users/registor',
+        method: 'post',
+        data: `username=${this.username}&password=${this.password}`,
+        callback: function (res) {
+        	console.log(res)
+          if (res.data.username) {
+            localStorage.setItem('username', res.data.username)
+            that.storeName = res.data.username
+            window.location.href='http://localhost:8080/#/login';
+          }
+        }
+      })
+    },
     back: function () {
       this.$router.go(-1)
-    } 
+    }
+  },
+
+  mounted: function () {
   }
 }
-window.vm = vm
-export default vm
+
 </script>
 
 <style>

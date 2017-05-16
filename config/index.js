@@ -36,7 +36,7 @@ module.exports = {
         }
       },
       '/nodejs': {
-        target: 'http://localhost:3000/',
+        target: '10.17.152.169:3000',
         changeOrigin: true,
         pathRewrite: {
           '^/nodejs': ''
